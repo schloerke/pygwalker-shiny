@@ -40,7 +40,7 @@ Define the user interface (UI) of the Shiny application using `ui` components:
 app_ui = ui.page_fluid(
     ui.h1("Using pygwalker with Shiny"),
     ui.markdown("This is a demo of using [pygwalker](https://github.com/Kanaries/pygwalker) with Shiny."),
-    ui.HTML(pyg.walk(df, spec="./viz-config.json", return_html=True, debug=False)),
+    ui.HTML(pyg.to_html(df, spec="./viz-config.json")),
 )
 ```
 
@@ -48,7 +48,7 @@ Here's a quick breakdown of the UI components:
 
 - `ui.h1()`: Adds a header to the Shiny app.
 - `ui.markdown()`: Allows you to include markdown-formatted text for descriptions or additional information.
-- `ui.HTML()`: This is where `pygwalker` comes into play. The `pyg.walk()` function transforms the dataset into an interactive visualization, which is then rendered in the Shiny app through this HTML component.
+- `ui.HTML()`: This is where `pygwalker` comes into play. The `pyg.to_html()` function transforms the dataset into an interactive visualization, which is then rendered in the Shiny app through this HTML component.
 
 #### 4. Define the Server Function
 
