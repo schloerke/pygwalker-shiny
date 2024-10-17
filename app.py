@@ -10,7 +10,7 @@ df = dataset.to_pandas()
 app_ui = ui.page_fluid(
     ui.h1("Using pygwalker with Shiny"),
     ui.markdown("This is a demo of using [pygwalker](https://github.com/Kanaries/pygwalker) with Shiny."),
-    ui.HTML(pyg.walk(df, spec="./viz-config.json", return_html=True, debug=False)),
+    ui.HTML(pyg.to_html(df, spec="./viz-config.json")),
 )
 
 
